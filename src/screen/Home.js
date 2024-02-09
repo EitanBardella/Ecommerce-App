@@ -6,10 +6,10 @@ import Category from '../components/Category'
 
 
 
-const Home = ({categorySelectHandler}) => {
+const Home = ({categorySelectHandler, categorySelect}) => {
     return (
         <View>
-            <Headerr title={"Home"}/>
+            <Headerr title={"Home"} categorySelect={categorySelect} />
 
             <Category categorySelectHandler={categorySelectHandler} />
 

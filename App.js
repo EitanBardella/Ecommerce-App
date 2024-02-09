@@ -30,7 +30,7 @@ const App = () => {
 
   return (
     <>
-      {categorySelect ? <ProdCategory categorySelect={categorySelect} /> : <Home categorySelectHandler={categorySelectHandler} />}
+      {categorySelect ? <ProdCategory categorySelect={categorySelect} /> : <Home categorySelect={categorySelect} categorySelectHandler={categorySelectHandler} />}
     </>
   )
 }

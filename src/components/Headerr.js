@@ -2,13 +2,13 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import Search from './Search'
 
-const Header = ({title}) => {
+const Header = ({title, categorySelect}) => {
     return (
         <>
             <View style={styles.container} >
                 <Text style={styles.text}>{title}</Text>
             </View>
-            <Search/>
+            <Search categorySelect={categorySelect}/>
         </>
     )
 }
