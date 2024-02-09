@@ -1,20 +1,40 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native'
+import Home from './src/screen/Home'
+import ProdCategory from './src/screen/ProdCategory'
+import ProdDetail from './src/screen/ProdDetail'
+import { useEffect, useState } from 'react'
+import {useFonts} from "expo-font"
 
-export default function App() {
+
+const App = () => {
+
+
+  //Estados
+  const [categorySelect,setCategorySelect] = useState("")
+  const [productSelect,setProductSelect] = useState("")
+
+  //Funciones para actualizar estados
+  const categorySelectHandler = (category) =>{
+    setCategorySelect(category)
+  }
+  useEffect(()=>{
+    console.log(categorySelect)
+  },[categorySelect])
+  
+    //Fuentes
+    const [fontsLoaded] = useFonts({
+      'Quicksand-Bold': require('./assets/font/quickSand/Quicksand-Bold.ttf'),
+    });
+    //No muestre nada hasta que no cargue la font requerida
+    if (!fontsLoaded) return null
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    <>
+      {categorySelect ? <ProdCategory categorySelect={categorySelect} /> : <Home categorySelectHandler={categorySelectHandler} />}
+    </>
+  )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App
+
+const styles = StyleSheet.create({})
