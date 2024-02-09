@@ -5,14 +5,14 @@ import { Entypo } from "@expo/vector-icons";
 import prods from "../helpers/data/product.json";
 
 const Search = () => {
-    // Estado 
+    // Estado para almacenar el texto del input
     const [input, setInput] = useState("");
-    // Funcion para el input
+    // Funcion para actualizar el input
     const inpuHandler = (text) => setInput(text);
     // Estado para keyWord
     const [keyword, setKeyword] = useState("");
     // Funcion para la KeyWord
-    const keywordHandler = (KeyWord) => {
+    const keywordHandler = () => {
         // Filtrar los productos basado en la palabra clave
         setKeyword(prods.filter(prods => prods.title.includes(keyword)));
     };

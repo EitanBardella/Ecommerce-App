@@ -15,14 +15,6 @@ const Category = ({categorySelectHandler}) => {
                     <CardCategory item={item} categorySelectHandler={categorySelectHandler} />
             )}
             />
-            <FlatList
-                data={prods}
-                keyExtractor={item => item}
-                renderItem={({item})=>(
-                    <ProdHome item={item} />
-                )}
-                numColumns={2}
-            />
         </ScrollView>
     )
 }

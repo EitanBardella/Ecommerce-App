@@ -9,7 +9,6 @@ const ProdxCategory = ({ item }) => {
 
     return (
         <View style={styles.container}>
-            <View></View>
             <View style={styles.imageContainer}>
                 <Image source={{ uri: item.thumbnail }} style={styles.image} resizeMode= "cover" />
             </View>

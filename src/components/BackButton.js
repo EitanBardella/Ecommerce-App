@@ -1,11 +1,12 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { Pressable, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import {Entypo} from "@expo/vector-icons";
 
 const BackButton = () => {
     return (
-        <View>
-        <Text>BackButton</Text>
-        </View>
+        <Pressable>
+            <Entypo name={'menu'}/>
+        </Pressable>
     )
 }
 
