@@ -1,6 +1,6 @@
 import { Pressable, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import Shadow from '../helpers/data/Shadow'
+import Shadow from '../helpers/Shadow'
 
 const CardCategory = ({item, categorySelectHandler}) => {
     return (

@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, Pressable, Modal } from 'react-native'
 import React, { useState } from 'react'
 import { Entypo } from "@expo/vector-icons";
 import Category from './Category';
+import { colores } from "../helpers/color"; 
 
 
 const MenuButton = ({categorySelectHandler}) => {
@@ -28,7 +29,7 @@ const MenuButton = ({categorySelectHandler}) => {
                     <View style={styles.headerModal}>
                         <Text style={styles.headerTextModal}>Categorias</Text>
                         <Pressable style={styles.headeCrossrModal}  onPress={toggleMenu}>
-                            <Entypo name={"cross"} size={36} color="#F0EFF4" />
+                            <Entypo name={"cross"} size={36} color="#000000" />
                         </Pressable>
                     </View>
                     <Category categorySelectHandler={categorySelectHandler} />
@@ -47,22 +48,21 @@ const styles = StyleSheet.create({
         justifyContent:"center",
         backgroundColor: 'rgba(0, 0, 0, 0.5)' // Fondo oscuro transparente
     },
-    closeModal:{
-        backgroundColor: 'rgba(0, 0, 0, 1)',
-        color:"#F0EFF4",
-        marginBottom:80,
-        borderRadius:10
-    },
+
 
     headerModal:{
+        width:"100%",
+        backgroundColor:"rgba(255, 255, 255,1)",
         borderRadius:10,
         flexDirection:"row",
         alignItems:"center",
     },
     headerTextModal:{
         textAlign:"center",
-        color:"#F0EFF4",
-        fontSize:20,
+        color:colores.black,
+        fontSize:22,
+        marginLeft:125,
+
         padding:10,
     },
     headeCrossrModal:{

@@ -7,7 +7,10 @@ import {useFonts} from "expo-font"
 
 
 const App = () => {
-
+//Ultima clase grabada 7, min 1:36:41
+//Problemas a resolver: 
+//1-No funciona el search gral
+//2-Cuando quiero cambiar de categoria con el menu button desconoce la funcion categorySelectHandler
 
   //Estados
   const [categorySelect,setCategorySelect] = useState("")

@@ -1,5 +1,5 @@
 import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
-import React from 'react';
+import { colores } from "../helpers/color"; 
 
 const ProdxCategory = ({ item }) => {
 
@@ -30,7 +30,7 @@ export default ProdxCategory;
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: "#FF0059",
+        backgroundColor: colores.midLightGrey,
         width: "40%",
         marginHorizontal: "5%",
         marginVertical: 10,
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
         marginBottom:5,
         paddingBottom:10,
         borderBottomWidth:2,
-        borderBottomColor:"#FFFFFF",
+        borderBottomColor:colores.white,
     },
     image: {
         width: 100,
@@ -59,24 +59,24 @@ const styles = StyleSheet.create({
     text: {
         textAlign:"center",
         fontSize: 18,
-        color: "#FFFFFF",
+        color: colores.white,
     },
     priceText:{
         marginVertical:2,
         textAlign:"center",
         fontSize: 18,
-        color: "#FFFFFF",
+        color: colores.white,
     },
     buttonContainer:{
         marginVertical:10,
-        backgroundColor:"#E56894",
+        backgroundColor:colores.fuxia,
         padding:10,
         borderWidth:2,
-        borderColor:"#000000",
+        borderColor:colores.black,
         borderRadius:10
     },
     buttonText:{
-        color:"white",
+        color:colores.white,
         fontSize:15
     },
 });

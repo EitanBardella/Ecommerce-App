@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import Search from './Search'
+import { colores } from "../helpers/color"; 
+
 import MenuButton from './MenuButton'
 
 const Header = ({title, categorySelectHandler}) => {
@@ -11,7 +12,6 @@ const Header = ({title, categorySelectHandler}) => {
                 <MenuButton categorySelectHandler={categorySelectHandler}/>
                 <Text style={styles.text}>{title}</Text>
             </View>
-            <Search />
         </>
     )
 }
@@ -21,7 +21,7 @@ export default Header
 const styles = StyleSheet.create({
     container:{
         flexDirection:"row",
-        backgroundColor:"#F4D678",
+        backgroundColor:colores.yellow,
         height:80,
         width:"100%",
         justifyContent:"center", // Centro horizontalmente

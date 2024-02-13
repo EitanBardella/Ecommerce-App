@@ -3,22 +3,35 @@ import React, { useEffect, useState } from 'react'
 import Header from '../components/Headerr'
 import prods from "../helpers/data/product.json"
 import ProdxCategoy from '../components/ProductCategory'
+import Search from '../components/Search'
+import { colores } from '../helpers/color'
 
 const ProdCategory = ({categorySelect}) => {
     //Estado de prods filtrados
     const [prodFilter, setProdFilter] = useState([])
+    const [keyword, setKeyword] = useState("");
 
+    const keywordHandler = (key) => {
+        // Filtrar los productos basado en la palabra clave
+        setKeyword(key);
+    };
 
     //Cambia dependiendo de con que se actualice la categoria
     useEffect(() => {
         //map de los prods filtrados
-        setProdFilter(prods.filter(prods => prods.category === categorySelect))
-    }, [categorySelect])
+        if(categorySelect)setProdFilter(prods.filter(prods => prods.category === categorySelect))
+        if(keyword)setProdFilter(prodFilter.filter(prods => {
+            const prodTitleLower = prods.title.toLowerCase();
+            const keywordLower = keyword.toLowerCase();
+            return prodTitleLower.includes(keywordLower)
+        }))
+    }, [categorySelect,keyword])
     
 
     return (
         <>
             <Header title={categorySelect || "Productos"}/>
+            <Search keywordHandler={keywordHandler} />
             <FlatList
             style={styles.container}
             data={prodFilter}
@@ -36,7 +49,7 @@ export default ProdCategory
 
 const styles = StyleSheet.create({
     container:{
-        backgroundColor:"#2D2D2D",
+        backgroundColor:colores.darkGreyShadow,
 
     }
 })

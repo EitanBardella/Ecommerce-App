@@ -5,6 +5,7 @@ import prods from "../helpers/data/product.json"
 import Category from '../components/Category'
 import BackButton from '../components/BackButton'
 import ProdHome from "../components/ProdHome"
+import { colores } from '../helpers/color'
 
 
 
@@ -31,6 +32,6 @@ export default Home
 
 const styles = StyleSheet.create({
     container:{
-        backgroundColor:"#2D2D2D",
+        backgroundColor:colores.darkGreyShadow,
     }
 })
