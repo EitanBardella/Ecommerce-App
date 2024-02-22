@@ -6,7 +6,8 @@ import ProdxCategoy from '../components/ProductCategory'
 import Search from '../components/Search'
 import { colores } from '../helpers/color'
 
-const ProdCategory = ({categorySelect}) => {
+const ProdCategory = ({route,navigation}) => {
+    const {categorySelect}= route.params
     //Estado de prods filtrados
     const [prodFilter, setProdFilter] = useState([])
     const [keyword, setKeyword] = useState("");
@@ -37,7 +38,7 @@ const ProdCategory = ({categorySelect}) => {
             data={prodFilter}
             keyExtractor={item => item.id}
             renderItem={({item})=>
-                <ProdxCategoy item={item} />
+                <ProdxCategoy item={item} navigation={navigation}  />
             }
             numColumns={2}
             />

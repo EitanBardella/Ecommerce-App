@@ -1,11 +1,8 @@
 import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
 import { colores } from "../helpers/color"; 
 
-const ProdxCategory = ({ item }) => {
+const ProdxCategory = ({ item,navigation }) => {
 
-    const prodDetailHandler = () =>{
-        console.log("Hola")
-    }
 
     return (
         <View style={styles.container}>
@@ -17,7 +14,7 @@ const ProdxCategory = ({ item }) => {
                 <Text style={styles.text}> {item.title} </Text>
                 <Text style={styles.priceText}> $ {item.price} </Text>
             </View>
-            <Pressable onPress={prodDetailHandler} style={styles.buttonContainer}>
+            <Pressable onPress={()=>navigation.navigate("ProdDetail",{productId:item.id})} style={styles.buttonContainer}>
                 <Text style={styles.buttonText}>
                     Details
                 </Text>

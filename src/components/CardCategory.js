@@ -2,9 +2,9 @@ import { Pressable, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import Shadow from '../helpers/Shadow'
 
-const CardCategory = ({item, categorySelectHandler}) => {
+const CardCategory = ({item, navigation}) => {
     return (
-        <Pressable onPress={()=>categorySelectHandler(item)}>
+        <Pressable onPress={()=>navigation.navigate("ProdCategory", {categorySelect:item})}>
             <Shadow style={styles.container} >
                 <Text  style={styles.text}> {item} </Text>
             </Shadow >

@@ -9,16 +9,16 @@ import { colores } from '../helpers/color'
 
 
 
-const Home = ({categorySelectHandler, }) => {
+const Home = ({ navigation}) => {
     return (
         <View style={styles.container} >
-            <Headerr title={"Home"} categorySelectHandler={categorySelectHandler} />
+            {/* <Headerr title={"Home"} navigation={navigation} /> */}
             <ScrollView>
                 <FlatList
                     data={prods}
                     keyExtractor={item => item}
                     renderItem={({item})=>(
-                        <ProdHome item={item} />
+                        <ProdHome item={item}  />
                     )}
                     numColumns={2}
                 />

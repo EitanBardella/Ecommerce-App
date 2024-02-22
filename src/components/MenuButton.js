@@ -6,7 +6,7 @@ import Category from './Category';
 import { colores } from "../helpers/color"; 
 
 
-const MenuButton = ({categorySelectHandler}) => {
+const MenuButton = ({navigation}) => {
 
     const [menuVisible, setMenuVisible] = useState(false)
 
@@ -32,7 +32,7 @@ const MenuButton = ({categorySelectHandler}) => {
                             <Entypo name={"cross"} size={36} color="#000000" />
                         </Pressable>
                     </View>
-                    <Category categorySelectHandler={categorySelectHandler} />
+                    <Category  navigation={navigation} />
                 </View>
             </Modal>
         </View>

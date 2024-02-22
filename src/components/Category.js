@@ -5,14 +5,17 @@ import prods from "../helpers/data/product.json"
 import CardCategory from './CardCategory'
 import ProdxCategory from './ProductCategory'
 import ProdHome from './ProdHome'
-const Category = ({categorySelectHandler}) => {
+
+
+
+const Category = ({navigation}) => {
     return (
         <ScrollView>
             <FlatList style={styles.container}
                 data={category}
                 keyExtractor={item => item}
                 renderItem={({item})=>(
-                    <CardCategory item={item} categorySelectHandler={categorySelectHandler} />
+                    <CardCategory item={item} navigation={navigation}  />
             )}
             />
         </ScrollView>
