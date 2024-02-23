@@ -1,18 +1,14 @@
 import { StatusBar, StyleSheet, Text, View } from 'react-native'
-import Home from './src/screen/Home'
-import ProdCategory from './src/screen/ProdCategory'
-import ProdDetail from './src/screen/ProdDetail'
-import { useEffect, useState } from 'react'
 import {useFonts} from "expo-font"
 import { colores } from './src/helpers/color'
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Headerr from "./src/components/Headerr"
+import MainNav from './src/navigation/MainNav'
 
 
-const Stack = createNativeStackNavigator();
 
 const App = () => {
+//Cosas para hacer 
+//1-Tab Navigation 2-State y redux
+
 //Problemas a resolver: 
 //1-No funciona el search gral
 //2-Cuando quiero cambiar de categoria con el menu button desconoce la funcion categorySelectHandler
@@ -50,27 +46,10 @@ const App = () => {
   // const selectProdId=(id)=>{
   //   setProductId(id)
 
-
   return (
     <>
       <StatusBar backgroundColor={colores.yellow}/>
-      <NavigationContainer>
-      <Stack.Navigator
-        initialRouteName='Home'
-        screenOptions={({route}) => {
-          return {
-            header: () => {
-              return <Headerr navigation={navigation} title={route.name === "Home" ? "Home" : 
-                                    route.name === "ProdCategory" ? route.params.categorySelect:"Detalle" } />
-            }
-          }
-        }}
-      >
-          <Stack.Screen name="Home" component={Home} />
-          <Stack.Screen name="ProdCategory" component={ProdCategory} />
-          <Stack.Screen name="ProdDetail" component={ProdDetail} />
-        </Stack.Navigator>
-      </NavigationContainer>
+      <MainNav/>
     </>
 
 

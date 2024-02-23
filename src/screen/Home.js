@@ -1,9 +1,6 @@
 import { FlatList, ScrollView, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import Headerr from "../components/Headerr"
 import prods from "../helpers/data/product.json"
-import Category from '../components/Category'
-import BackButton from '../components/BackButton'
 import ProdHome from "../components/ProdHome"
 import { colores } from '../helpers/color'
 
@@ -33,5 +30,6 @@ export default Home
 const styles = StyleSheet.create({
     container:{
         backgroundColor:colores.darkGreyShadow,
+        
     }
 })

@@ -31,7 +31,7 @@ const ProdCategory = ({route,navigation}) => {
 
     return (
         <>
-            <Header title={categorySelect || "Productos"}/>
+            {/* <Header title={categorySelect || "Productos"}/> */}
             <Search keywordHandler={keywordHandler} />
             <FlatList
             style={styles.container}

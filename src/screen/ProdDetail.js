@@ -15,7 +15,6 @@ const ProdDetail = ({route}) => {
 
     return (
         <View style={styles.container} >
-            <Header title={"Product Detail"}/>
             <Text style={styles.textTitle} >{prod.title}</Text>
             <View style={styles.container2} >
                 <Image style={styles.img} resizeMode='cover' source={{ uri: prod.thumbnail }} />
