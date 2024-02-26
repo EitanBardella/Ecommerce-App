@@ -1,7 +1,11 @@
 import { StyleSheet, Text, View,Image,Pressable } from 'react-native'
 import { colores } from "../helpers/color"; 
+import {  useDispatch } from 'react-redux';
+import { deleteCartItem } from '../features/cart/cartSlice';
+import {Feather} from "@expo/vector-icons"
 
 const CartItem = ({item}) => {
+    const dispatch = useDispatch()
     return (
         <View style={styles.container}>
             <View style={styles.imageContainer}>
@@ -9,10 +13,10 @@ const CartItem = ({item}) => {
             </View>
             <Text style={styles.text}> {item.title} </Text>
             <Text style={styles.priceText}> $ {item.price} </Text>
-            <Text> {item.quantity} </Text>
-            <Pressable  style={styles.buttonContainer}  >
+            <Text> Cantidad: {item.quantity} </Text>
+            <Pressable  style={styles.buttonContainer} onPress={()=>dispatch(deleteCartItem(item.id)) } >
                 <Text style={styles.buttonText}>
-                    Delete
+                    <Feather name="trash-2" size={25} />
                 </Text>
             </Pressable>
         </View>

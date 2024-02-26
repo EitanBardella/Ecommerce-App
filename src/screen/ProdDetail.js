@@ -3,6 +3,10 @@ import prods from "../helpers/data/product.json"
 import { useEffect, useState } from 'react'
 import Header from '../components/Headerr'
 import { colores } from '../helpers/color'
+import Counter from '../components/Counter'
+import { useDispatch } from 'react-redux';
+import { addCartItem } from '../features/cart/cartSlice'
+
 
 const ProdDetail = ({route}) => {
     const {productId}= route.params
@@ -12,6 +16,7 @@ const ProdDetail = ({route}) => {
         setProd(prodFind)
     }, [prods])
     
+    const dispatch = useDispatch()
 
     return (
         <View style={styles.container} >
@@ -43,8 +48,9 @@ const ProdDetail = ({route}) => {
                 <Text> $ {prod.price}</Text>
             </View>
             <View style={styles.container4} >
-                <Pressable>
-                    <Text>Add Cart</Text>
+                <Counter/>
+                <Pressable style={styles.btnAdd} onPress={()=>dispatch(addCartItem(prod))} >
+                    <Text style={styles.textAdd}   >Add Cart</Text>
                 </Pressable>
             </View>
         </View>
@@ -112,6 +118,19 @@ const styles = StyleSheet.create({
     },
     
     container4:{
-        marginVertical:20
+        marginVertical:20,
+        alignItems:"center",
+        justifyContent:"center",
+        gap:15
     },
+    btnAdd:{
+        width:110,
+
+    },
+    textAdd:{
+        fontSize:20,
+        borderWidth:2,
+        padding:5,
+        borderRadius:10
+    }
 })

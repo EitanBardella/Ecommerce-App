@@ -5,8 +5,13 @@ import cart from "../helpers/data/cart.json"
 
 import CartItem from "../components/CartItem"
 import { colores } from '../helpers/color'
+import { useSelector, } from 'react-redux';
+
 
 const Cart = () => {
+
+    const cart = useSelector((state)=>state.cart)
+
     return (
         <View style={styles.container} >
             <FlatList

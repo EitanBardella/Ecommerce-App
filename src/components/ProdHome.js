@@ -1,7 +1,6 @@
 import { StyleSheet, Text, View, Image, Pressable } from 'react-native'
 import { colores } from "../helpers/color"; 
-
-const ProdHome = ({item,}) => {
+const ProdHome = ({item,navigation}) => {
 
 
     return (
@@ -14,7 +13,7 @@ const ProdHome = ({item,}) => {
                 <Text style={styles.text}> {item.title} </Text>
                 <Text style={styles.priceText}> $ {item.price} </Text>
             </View>
-            <Pressable  style={styles.buttonContainer}  >
+            <Pressable onPress={()=>navigation.navigate("ProdDetail",{productId:item.id})}  style={styles.buttonContainer}  >
                 <Text style={styles.buttonText}>
                     Details
                 </Text>

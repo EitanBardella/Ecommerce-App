@@ -5,7 +5,6 @@ import ProdHome from "../components/ProdHome"
 import { colores } from '../helpers/color'
 
 
-
 const Home = ({ navigation}) => {
     return (
         <View style={styles.container} >
@@ -15,7 +14,7 @@ const Home = ({ navigation}) => {
                     data={prods}
                     keyExtractor={item => item}
                     renderItem={({item})=>(
-                        <ProdHome item={item}  />
+                        <ProdHome item={item} navigation={navigation}  />
                     )}
                     numColumns={2}
                 />

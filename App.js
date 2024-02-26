@@ -2,7 +2,9 @@ import { StatusBar, StyleSheet, Text, View } from 'react-native'
 import {useFonts} from "expo-font"
 import { colores } from './src/helpers/color'
 import MainNav from './src/navigation/MainNav'
-
+//Redux
+import { store } from './src/app/store'
+import { Provider } from 'react-redux'
 
 
 const App = () => {
@@ -49,7 +51,9 @@ const App = () => {
   return (
     <>
       <StatusBar backgroundColor={colores.yellow}/>
-      <MainNav/>
+      <Provider store={store}>
+        <MainNav/>
+      </Provider>
     </>
 
 
