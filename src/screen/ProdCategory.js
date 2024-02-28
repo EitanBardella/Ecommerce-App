@@ -1,13 +1,14 @@
 import { FlatList, StyleSheet, Text, View } from 'react-native'
 import React, { useEffect, useState } from 'react'
-import Header from '../components/Headerr'
-import prods from "../helpers/data/product.json"
+
 import ProdxCategoy from '../components/ProductCategory'
 import Search from '../components/Search'
 import { colores } from '../helpers/color'
+import { useGetProductsByCategoryQuery } from '../app/servicies/shop'
 
 const ProdCategory = ({route,navigation}) => {
     const {categorySelect}= route.params
+    const {data:prods}=useGetProductsByCategoryQuery(categorySelect)
     //Estado de prods filtrados
     const [prodFilter, setProdFilter] = useState([])
     const [keyword, setKeyword] = useState("");
@@ -20,13 +21,13 @@ const ProdCategory = ({route,navigation}) => {
     //Cambia dependiendo de con que se actualice la categoria
     useEffect(() => {
         //map de los prods filtrados
-        if(categorySelect)setProdFilter(prods.filter(prods => prods.category === categorySelect))
-        if(keyword)setProdFilter(prodFilter.filter(prods => {
+        setProdFilter(prods)
+        if(keyword)setProdFilter(prods.filter(prods => {
             const prodTitleLower = prods.title.toLowerCase();
             const keywordLower = keyword.toLowerCase();
             return prodTitleLower.includes(keywordLower)
         }))
-    }, [categorySelect,keyword])
+    }, [categorySelect,keyword, prods])
     
 
     return (

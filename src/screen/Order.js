@@ -5,11 +5,13 @@ import OrderItem from '../components/OrderItem'
 
 const Order = () => {
     return (
-        <FlatList
-        data={order}
-        keyExtractor={(item)=>item.id}
-        renderItem={({item})=><OrderItem order={item} />}
-        />
+        <>
+            <FlatList
+            data={order}
+            keyExtractor={(item)=>item.id}
+            renderItem={({item})=><OrderItem order={item} />}
+            />
+        </>
     )
 }
 

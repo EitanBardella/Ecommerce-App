@@ -143,42 +143,123 @@
         ]
     },
     {
-        "id": 8,
-        "title": "Infinix INBOOK",
+        "id": 9,
+        "title": "Redmi Buds Essential",
         "description": "Infinix Inbook X1 Ci3 10th 8GB 256GB 14 Win10 Grey – 1 Year Warranty",
         "price": 1099,
         "discountPercentage": 11.83,
         "rating": 4.54,
         "stock": 96,
-        "brand": "Infinix",
-        "category": "laptops",
-        "thumbnail": "https://i.dummyjson.com/data/products/9/thumbnail.jpg",
+        "brand": "Xiaomi",
+        "category": "Headphones",
+        "thumbnail": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.electroworld.com.ar%2FMLA-1327394839-auriculares-in-ear-xiaomi-redmi-buds-essential-blue-_JM&psig=AOvVaw2l61IbOFtBfCfuBrnqbM7g&ust=1709218204802000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCNDtj5KkzoQDFQAAAAAdAAAAABAG",
         "images": [
-          "https://i.dummyjson.com/data/products/9/1.jpg",
-          "https://i.dummyjson.com/data/products/9/2.png",
-          "https://i.dummyjson.com/data/products/9/3.png",
-          "https://i.dummyjson.com/data/products/9/4.jpg",
-          "https://i.dummyjson.com/data/products/9/thumbnail.jpg"
+          "https://playmania438.com.ar/wp-content/uploads/2023/06/auricular-inalambrico-in-ear-bluetooth-52-xiaomi-buds-essential-negro.jpg"
         ]
     },
     {
-        "id": 9,
-        "title": "HP Pavilion 15-DK1056WM",
+        "id": 10,
+        "title": "Qcy H3 con ANC Hi-res Plegable Black",
         "description": "HP Pavilion 15-DK1056WM Gaming Laptop 10th Gen Core i5, 8GB, 256GB SSD, GTX 1650 4GB, Windows 10",
         "price": 1099,
         "discountPercentage": 6.18,
         "rating": 4.43,
         "stock": 89,
-        "brand": "HP Pavilion",
-        "category": "laptops",
-        "thumbnail": "https://i.dummyjson.com/data/products/10/thumbnail.jpeg",
+        "brand": "Dongguan Hele Electronics",
+        "category": "Headphones",
+        "thumbnail": "https://www.google.com/url?sa=i&url=https%3A%2F%2Flistado.mercadolibre.com.ar%2Faudifonos-hi-res&psig=AOvVaw25xMfItexnEQxXpWtei_y5&ust=1709218371522000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCKj80-GkzoQDFQAAAAAdAAAAABAF",
         "images": [
-          "https://i.dummyjson.com/data/products/10/1.jpg",
-          "https://i.dummyjson.com/data/products/10/2.jpg",
-          "https://i.dummyjson.com/data/products/10/3.jpg",
-          "https://i.dummyjson.com/data/products/10/thumbnail.jpeg"
+          "https://http2.mlstatic.com/D_NQ_NP_796293-MLU73861220466_012024-O.webp"
         ]
+    },
+    {
+      "id": 11,
+      "title": "G203 negro",
+      "description": "Infinix Inbook X1 Ci3 10th 8GB 256GB 14 Win10 Grey – 1 Year Warranty",
+      "price": 1099,
+      "discountPercentage": 11.83,
+      "rating": 4.54,
+      "stock": 96,
+      "brand": "Logitech",
+      "category": "Mouse",
+      "thumbnail": "https://www.mink.com.ar/qloud/ryr/fotos/21598-1.jpg",
+      "images": [
+        "https://www.arrichetta.com.ar/wp-content/uploads/2020/11/910-005793.jpg"
+      ]
+  },
+      {
+        "id": 12,
+        "title": "DeathAdder Essential negro",
+        "description": "Infinix Inbook X1 Ci3 10th 8GB 256GB 14 Win10 Grey – 1 Year Warranty",
+        "price": 1099,
+        "discountPercentage": 11.83,
+        "rating": 4.54,
+        "stock": 96,
+        "brand": "Razer",
+        "category": "Mouse",
+        "thumbnail": "https://hard-digital.com.ar/public/files/Mouse%20Razer%20Deathadder%20Essential%206400%20Dpi%20Negro/2.jpg",
+        "images": [
+          "https://http2.mlstatic.com/D_NQ_NP_674581-MLA41799362594_052020-O.webp"
+        ]
+    },
+    {
+      "id": 13,
+      "title": "MK470 Español",
+      "description": "Infinix Inbook X1 Ci3 10th 8GB 256GB 14 Win10 Grey – 1 Year Warranty",
+      "price": 1099,
+      "discountPercentage": 11.83,
+      "rating": 4.54,
+      "stock": 96,
+      "brand": "Logitech",
+      "category": "KeyBoards",
+      "thumbnail": "https://resource.logitech.com/w_800,c_lpad,ar_16:9,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/combos/mk470-slim-wireless-combo/gallery-images/mk470-gallery-graphite-matt-us-intl-1.png?v=1",
+      "images": [
+        "https://doto.vtexassets.com/arquivos/ids/261309-150-auto?v=638095971967800000&width=150&height=auto&aspect=true"
+      ]
+    },
+    {
+      "id": 14,
+      "title": "T-Dagger Arena T-TGK321 QWERTY",
+      "description": "Infinix Inbook X1 Ci3 10th 8GB 256GB 14 Win10 Grey – 1 Year Warranty",
+      "price": 1099,
+      "discountPercentage": 11.83,
+      "rating": 4.54,
+      "stock": 96,
+      "brand": "T-Dagger",
+      "category": "KeyBoards",
+      "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_923558-MLU72639573415_112023-O.webp",
+      "images": [
+        "https://t-daggerla.com/wp-content/uploads/2021/11/ARENA-BLOQUE-1-Teclado-60_-destacando-la-iluminacion-rainbow.png"
+      ]
+    },
+    {
+      "id": 15,
+      "title": "Aoc 24 Fhd G2490vx 144Hz 1ms AMD FreeSync ",
+      "description": "Infinix Inbook X1 Ci3 10th 8GB 256GB 14 Win10 Grey – 1 Year Warranty",
+      "price": 1099,
+      "discountPercentage": 11.83,
+      "rating": 4.54,
+      "stock": 96,
+      "brand": "Aoc",
+      "category": "Monitor",
+      "thumbnail": "https://m.media-amazon.com/images/I/91lQg60PetL._AC_UF1000,1000_QL80_.jpg",
+      "images": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaxnPsnoIt8Xfdrg5Yr9-s-21XCsLAa61VdWQllDKwmGYXUPgAQuTlGel4z0jF7yEmWN0&usqp=CAU"
+      ]
+    },
+    {
+      "id": 16,
+      "title": "Monitor Gamer Curvo 27 pulgadas  Phillips",
+      "description": "Infinix Inbook X1 Ci3 10th 8GB 256GB 14 Win10 Grey – 1 Year Warranty",
+      "price": 1099,
+      "discountPercentage": 11.83,
+      "rating": 4.54,
+      "stock": 96,
+      "brand": "Phillips",
+      "category": "Monitor",
+      "thumbnail": "https://www.comeros.com.ar/wp-content/uploads/2022/09/271E1SCA_55-RTP-global-001-150x150.webp",
+      "images": [
+        "data:image/jpeg;base64,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"
+      ]
     }
-
-
 ]

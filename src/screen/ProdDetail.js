@@ -1,12 +1,14 @@
 import { StyleSheet, Text, View, Image, Pressable } from 'react-native'
-import prods from "../helpers/data/product.json"
+
 import { useEffect, useState } from 'react'
-import Header from '../components/Headerr'
+
 import { colores } from '../helpers/color'
 import Counter from '../components/Counter'
 import { useDispatch } from 'react-redux';
 import { addCartItem } from '../features/cart/cartSlice'
+import {useGetProductsIdQuery} from '../app/servicies/shop'
 
+//Terminar estilos, Investigar si el Container 3 se puede hacer en Tabla
 
 const ProdDetail = ({route}) => {
     const {productId}= route.params
@@ -17,6 +19,9 @@ const ProdDetail = ({route}) => {
     }, [prods])
     
     const dispatch = useDispatch()
+    const {data:prods, isLoading} = useGetProductsIdQuery(productId)
+
+    if (isLoading) return <View><Text>Cargando</Text></View>
 
     return (
         <View style={styles.container} >

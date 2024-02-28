@@ -4,11 +4,13 @@ import Shadow from '../helpers/Shadow'
 
 const CardCategory = ({item, navigation}) => {
     return (
+        <>
         <Pressable onPress={()=>navigation.navigate("ProdCategory", {categorySelect:item})}>
             <Shadow style={styles.container} >
                 <Text  style={styles.text}> {item} </Text>
             </Shadow >
         </Pressable>
+        </>
     )
 }
 

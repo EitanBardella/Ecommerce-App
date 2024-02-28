@@ -11,6 +11,24 @@ export const carteSlice = createSlice({
     name:"cart",
     initialState,
     reducers:{
+        // addCartItem:(state, action)=>{
+        //     const itemAdded = state.items.some(
+        //         (val)=> val.id === action.payload.id
+        //     );
+        //     if (!itemAdded){
+        //         state.items=[...state.items, {...action.payload}]
+        //     } else {
+        //         state.items = state.items.map((item)=>{
+        //             if (item.id === action.payload.id){
+        //                 return { ...item, quantity: item.quantity + 1}
+        //             } else {
+        //                 return item
+        //             }
+        //         })
+        //     }
+        //     state.total=state.items.reduce((acc, item) => acc = acc + (item.price * item.quantity), 0);
+        //     console.log(state.quantity)
+        // },
         addCartItem:(state, action)=>{
             const index = state.items.findIndex((item)=>item.id === action.payload)
             if (index === -1){
