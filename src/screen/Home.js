@@ -1,17 +1,20 @@
 import { FlatList, ScrollView, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import prods from "../helpers/data/product.json"
+//data
+import { useGetAllProdQuery } from '../app/servicies/shop'
+
 import ProdHome from "../components/ProdHome"
 import { colores } from '../helpers/color'
 
 
 const Home = ({ navigation}) => {
+    const {data:products} = useGetAllProdQuery()
     return (
         <View style={styles.container} >
             {/* <Headerr title={"Home"} navigation={navigation} /> */}
             <ScrollView>
                 <FlatList
-                    data={prods}
+                    data={products}
                     keyExtractor={item => item}
                     renderItem={({item})=>(
                         <ProdHome item={item} navigation={navigation}  />
