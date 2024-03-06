@@ -1,18 +1,16 @@
 import { StyleSheet, Text, View, FlatList, ScrollView } from 'react-native'
 import React from 'react'
-import category from "../helpers/data/category.json"
-import prods from "../helpers/data/product.json"
 import CardCategory from './CardCategory'
-import ProdxCategory from './ProductCategory'
-import ProdHome from './ProdHome'
+import { useGetCategoriesQuery } from '../app/servicies/shop'
 
 
 
 const Category = ({navigation}) => {
+    const {data:categories} = useGetCategoriesQuery()
     return (
         <ScrollView>
             <FlatList style={styles.container}
-                data={category}
+                data={categories}
                 keyExtractor={item => item}
                 renderItem={({item})=>(
                     <CardCategory item={item} navigation={navigation}  />
