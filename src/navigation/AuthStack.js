@@ -15,7 +15,8 @@ const AuthStack = () => {
                     <Header
                         navigation={navigation}
                         title={
-                            route.name === "Login" ? "Welcome !" : "First Time Here ?"  }
+                            route.name === "Login" ? "Welcome !" : "Register Form"  }
+                        showMenuButton={false}
                     />
                 )
             }}

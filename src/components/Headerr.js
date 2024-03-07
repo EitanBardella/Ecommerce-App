@@ -2,11 +2,10 @@ import { StyleSheet, Text, View, Image, Pressable } from 'react-native'
 import React from 'react'
 import { colores } from "../helpers/color"; 
 import {Entypo} from "@expo/vector-icons";
-// import img from "../../assets/clubComicLogo1.png"
 
 import MenuButton from './MenuButton'
 
-const Header = ({title,navigation}) => {
+const Header = ({title,navigation,showMenuButton = true}) => {
     return (
         <>
             <View style={styles.container} >
@@ -16,8 +15,8 @@ const Header = ({title,navigation}) => {
                         <Entypo name="arrow-with-circle-left" size={35} color="black" />
                 </Pressable>
                 }
-                {/* <Image source={img} style={styles.log} /> */}
-                <MenuButton navigation={navigation} />
+                {/*Permite mostrar o no el menu Button*/}
+                {showMenuButton && <MenuButton navigation={navigation} />}
                 <Text style={styles.text}>{title}</Text>
             </View>
         </>
