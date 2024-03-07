@@ -4,18 +4,24 @@ import { colores } from '../helpers/color'
 import InputForm from '../components/InputForm'
 import SubmitButton from '../components/SubmitButton'
 import {AntDesign} from "@expo/vector-icons"
+import { useLoginMutation } from '../app/servicies/auth'
+import {  useDispatch } from 'react-redux'
+import { setUser } from '../features/auth/authSlice'
 
 const Login = ({navigation}) => {
-
+    const dispatch= useDispatch()
     //Estados
     //Guardar Email
     const [email, setEmail] = useState("")
     //Guadar PassWord
     const [password, setPassword] = useState("")
 
-    const onSubmit = ()=>{
-        console.log(email)
-        console.log(password)
+    const [triggerLogin] = useLoginMutation()
+
+    const onSubmit = async ()=>{
+        const {data} = await triggerLogin({email, password})
+        dispatch(setUser({email:data.email,idToken: data.idToken}))
+        console
     }
 
     return (

@@ -6,7 +6,7 @@ import SubmitButton from '../components/SubmitButton'
 import { AntDesign } from "@expo/vector-icons"
 import { useRegisterMutation } from '../app/servicies/auth'
 import { setUser } from '../features/auth/authSlice'
-import { UseDispatch, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 const Register = ({ navigation }) => {
     const dispatch = useDispatch()
     //Estados
@@ -22,9 +22,10 @@ const Register = ({ navigation }) => {
     const [triggerRegister] = useRegisterMutation()
 
     const onSubmit = async () => {
+        
         //Obtencion del idToken que se encuentra adentro de data de Response
         const { data } = await triggerRegister({ email, password })
-        console.log({email:data.email,idToken: data.idToken})
+        console.log("Response", data)
         dispatch(setUser({email:data.email,idToken: data.idToken}))
     }
 
