@@ -1,7 +1,8 @@
 import { StyleSheet, Text, View, Image, Pressable } from 'react-native'
-import prods from "../helpers/data/product.json"
+
+import { useGetProdByIdQuery } from '../app/servicies/shop'
+
 import { useEffect, useState } from 'react'
-import Header from '../components/Headerr'
 import { colores } from '../helpers/color'
 import Counter from '../components/Counter'
 import { useDispatch } from 'react-redux';
@@ -9,6 +10,7 @@ import { addCartItem } from '../features/cart/cartSlice'
 
 
 const ProdDetail = ({route}) => {
+    const {data:prods} = useGetProdByIdQuery()
     const {productId}= route.params
     const [prod, setProd] = useState({})
     useEffect(() => {
