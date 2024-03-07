@@ -1,7 +1,8 @@
 import {createNativeStackNavigator} from "@react-navigation/native-stack"
-import Login from "../components/Login";
-import Register from "../components/Register";
+
 import Header from "../components/Headerr";
+import Login from "../screen/Login";
+import Register from "../screen/Register";
 
 const Stack = createNativeStackNavigator();
 
@@ -14,7 +15,7 @@ const AuthStack = () => {
                     <Header
                         navigation={navigation}
                         title={
-                            route.name === "Login" ? "Inicio de Sesion" : "Register"  }
+                            route.name === "Login" ? "Welcome !" : "First Time Here ?"  }
                     />
                 )
             }}
