@@ -5,11 +5,12 @@ import InputForm from '../components/InputForm'
 import SubmitButton from '../components/SubmitButton'
 import { AntDesign } from "@expo/vector-icons"
 import { useRegisterMutation } from '../app/servicies/auth'
-
-
+import { setUser } from '../features/auth/authSlice'
+import { UseDispatch, useDispatch } from 'react-redux'
 const Register = ({ navigation }) => {
-
+    const dispatch = useDispatch()
     //Estados
+
     //Guardar Email
     const [email, setEmail] = useState("")
     //Guadar PassWord
@@ -18,11 +19,13 @@ const Register = ({ navigation }) => {
     const [confirmPassword, setConfirmtPassword] = useState("")
     //Estado para RegisterMutation
     //Primer Valor --> Ejecuta el post
-    const[triggerRegister] = useRegisterMutation()
+    const [triggerRegister] = useRegisterMutation()
 
-    const onSubmit = () => {
-        triggerRegister({email,password})
-        console.log("Usuario Registrado")
+    const onSubmit = async () => {
+        //Obtencion del idToken que se encuentra adentro de data de Response
+        const { data } = await triggerRegister({ email, password })
+        console.log({email:data.email,idToken: data.idToken})
+        dispatch(setUser({email:data.email,idToken: data.idToken}))
     }
 
     return (

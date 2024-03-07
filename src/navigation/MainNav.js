@@ -1,18 +1,21 @@
 import {StyleSheet,View, Text} from 'react-native'
 import { NavigationContainer } from '@react-navigation/native';
 import TabNavigation from './TabNavigation';
-import { useState } from 'react';
+
 import AuthStack from './AuthStack';
 
 
 const MainNav = () => {
-    //Estado para logearse
-    const [idToken, setIdToken]=useState("")
+
+    const user = useSelector((state)=>state.auth)
+
+
+    
 
     return (
         <>
             <NavigationContainer>
-                {idToken ? <TabNavigation/> : <AuthStack/>}
+                {user.idToken ? <TabNavigation/> : <AuthStack  />}
             </NavigationContainer>
         </>
     )
