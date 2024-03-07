@@ -4,6 +4,7 @@ import { colores } from '../helpers/color'
 import InputForm from '../components/InputForm'
 import SubmitButton from '../components/SubmitButton'
 import { AntDesign } from "@expo/vector-icons"
+import { useRegisterMutation } from '../app/servicies/auth'
 
 
 const Register = ({ navigation }) => {
@@ -15,11 +16,13 @@ const Register = ({ navigation }) => {
     const [password, setPassword] = useState("")
     //Guadar Confirm PassWord
     const [confirmPassword, setConfirmtPassword] = useState("")
+    //Estado para RegisterMutation
+    //Primer Valor --> Ejecuta el post
+    const[triggerRegister] = useRegisterMutation()
 
     const onSubmit = () => {
-        console.log(email)
-        console.log(password)
-        console.log(confirmPassword)
+        triggerRegister({email,password})
+        console.log("Usuario Registrado")
     }
 
     return (

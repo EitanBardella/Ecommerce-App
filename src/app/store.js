@@ -5,6 +5,7 @@ import cartReducer from "../features/cart/cartSlice"
 
 //Api
 import { shopApi } from './servicies/shop'
+import { authApi } from './servicies/auth'
 
 
 export const store = configureStore({
@@ -12,9 +13,10 @@ export const store = configureStore({
         counter: counterReducer,
         cart:cartReducer,
         [shopApi.reducerPath]: shopApi.reducer,
+        [authApi.reducerPath]: authApi.reducer,
     },
     middleware: (getDefaultMiddleware) =>
-        getDefaultMiddleware().concat(shopApi.middleware),
+        getDefaultMiddleware().concat(shopApi.middleware, authApi.middleware),
 })
 
 setupListeners(store.dispatch)
