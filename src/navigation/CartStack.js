@@ -1,6 +1,6 @@
 
 import Cart from "../screen/Cart";
-import Headerr from "../components/Headerr"
+import Header from "../components/Headerr"
 import {createNativeStackNavigator} from "@react-navigation/native-stack"
 
 const Stack = createNativeStackNavigator();
@@ -11,7 +11,7 @@ const CartStack = () => {
         initialRouteName='Cart'
         screenOptions={{
             header: ({ navigation, route }) => (
-                <Headerr
+                <Header
                     navigation={navigation}
                     title={
                         route.name === "CartStack" ? "Cart" :

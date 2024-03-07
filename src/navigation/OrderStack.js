@@ -1,5 +1,5 @@
 import {createNativeStackNavigator} from "@react-navigation/native-stack"
-import Headerr from "../components/Headerr"
+import Header from "../components/Headerr"
 import Order from "../screen/Order";
 
 const Stack = createNativeStackNavigator();
@@ -10,7 +10,7 @@ const OrderStack = () => {
         initialRouteName='Order'
         screenOptions={{
             header: ({ navigation, route }) => (
-                <Headerr
+                <Header
                     navigation={navigation}
                     title={
                         route.name === "Home" ? "Home" :

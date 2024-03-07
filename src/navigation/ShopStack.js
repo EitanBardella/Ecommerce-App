@@ -2,7 +2,7 @@
 import Home from '../screen/Home'
 import ProdCategory from '../screen/ProdCategory'
 import ProdDetail from '../screen/ProdDetail'
-import Headerr from "../components/Headerr"
+import Header from "../components/Headerr"
 import {createNativeStackNavigator} from "@react-navigation/native-stack"
 
 const Stack = createNativeStackNavigator();
@@ -13,7 +13,7 @@ const ShopStack = () => {
             initialRouteName='Home'
             screenOptions={{
                 header: ({ navigation, route }) => (
-                    <Headerr
+                    <Header
                         navigation={navigation}
                         title={
                             route.name === "Home" ? "Home" :
