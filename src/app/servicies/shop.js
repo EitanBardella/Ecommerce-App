@@ -10,10 +10,7 @@ export const shopApi = createApi({
         }),
         //Consulta para traer prod por id
         getProdById:builder.query({
-            query:(id)=>`/products.json?orderBy="id"&equalTo="${id}"`,
-            transformResponse:(response)=>{
-                const data = Object.values(response)
-            }
+            query:(id)=>`/products/${id}.json`,
         }),
         //Consulta para traer todas las categorias
         getCategories: builder.query({
@@ -24,6 +21,7 @@ export const shopApi = createApi({
             query:(category)=>`/products.json?orderBy="category"&equalTo="${category}"`,
             transformResponse:(response)=>{  
                 const data = Object.values(response)
+                return data
             }
         })
     })

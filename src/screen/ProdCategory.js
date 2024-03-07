@@ -24,12 +24,14 @@ const ProdCategory = ({route,navigation}) => {
     useEffect(() => {
         //map de los prods filtrados
         // if(categorySelect)setProdFilter(prods.filter(prods => prods.category === categorySelect))
-        if(keyword)setProdFilter(prodFilter.filter(prods => {
+        setProdFilter(prod)
+        if(keyword)setProdFilter(prod.filter(prods => {
             const prodTitleLower = prods.title.toLowerCase();
             const keywordLower = keyword.toLowerCase();
+            console.log(keyword)
             return prodTitleLower.includes(keywordLower)
         }))
-    }, [categorySelect,keyword])
+    }, [categorySelect,keyword, prod])
     
 
     return (
