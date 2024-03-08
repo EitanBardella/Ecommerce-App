@@ -29,7 +29,7 @@ const Login = ({navigation}) => {
             
             loginSchema.validateSync({ email, password})
             const {data} = await triggerLogin({email, password})
-            dispatch(setUser({email:data.email,idToken: data.idToken}))
+            dispatch(setUser({email:data.email,idToken: data.idToken, localId: data.localId}))
             
         }catch(error){
             

@@ -1,12 +1,12 @@
 //Componentes
-import {StyleSheet,View} from 'react-native'
+import { StyleSheet, View } from 'react-native'
 //Stacks
 import CartStack from './CartStack';
 import OrderStack from "./OrderStack"
 import ShopStack from './ShopStack';
 //Extras
-import {FontAwesome6} from "@expo/vector-icons"
-import {Fontisto} from "@expo/vector-icons"
+import { FontAwesome6 } from "@expo/vector-icons"
+import { Fontisto } from "@expo/vector-icons"
 //Tab
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
@@ -44,12 +44,12 @@ const TabNavigation = () => {
                     }
                 }}
             />
-            <Tab.Screen name='OrderStack' component={OrderStack}
+            <Tab.Screen name='ConfigStack' component={ConfigStack}
                 options={{
                     tabBarIcon: () => {
                         return (
                             <View>
-                                <Fontisto name="shopping-bag-1" size={34} />
+                                <Fontisto name="player-settings" size={34} />
                             </View>
                         )
                     }
@@ -62,10 +62,10 @@ const TabNavigation = () => {
 export default TabNavigation
 
 const styles = StyleSheet.create({
-    tabBar:{
-        height:70,
-        borderRadius:10,
+    tabBar: {
+        height: 70,
+        borderRadius: 10,
         position: "absolute",
-        marginBottom:0
+        marginBottom: 0
     },
 })

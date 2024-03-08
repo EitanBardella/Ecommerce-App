@@ -15,7 +15,7 @@ const Home = ({ navigation}) => {
             <ScrollView>
                 <FlatList
                     data={products}
-                    keyExtractor={item => item}
+                    keyExtractor={(item )=> item.id}
                     renderItem={({item})=>(
                         <ProdHome item={item} navigation={navigation}  />
                     )}

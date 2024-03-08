@@ -4,11 +4,14 @@ import Header from "../components/Headerr"
 import {createNativeStackNavigator} from "@react-navigation/native-stack"
 import Profile from "../screen/Profile";
 import Config from "../screen/Config";
+import ImageSelector from "../screen/ImageSelector";
+
 
 
 const Stack = createNativeStackNavigator();
 
 const ConfigStack = () => {
+
     return (
         <Stack.Navigator
         initialRouteName='Config'
@@ -18,7 +21,7 @@ const ConfigStack = () => {
                     navigation={navigation}
                     title={
                         route.name === "Config" ? "Settings" :
-                        route.name === "Perfil" ? "Profile" : "Profile"
+                        route.name === "Profile" ? "User Profile" : "Image Selector"
                     }
                     showMenuButton={false}
                     
@@ -28,6 +31,7 @@ const ConfigStack = () => {
         >
             <Stack.Screen name="Config" component={Config} />
             <Stack.Screen name="Profile" component={Profile} />
+            <Stack.Screen name="ImageSelector" component={ImageSelector} />
 
         </Stack.Navigator>
     )

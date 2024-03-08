@@ -35,7 +35,7 @@ const Register = ({ navigation }) => {
             //Obtencion del idToken que se encuentra adentro de data de Response
             const { data } = await triggerRegister({ email, password })
             console.log(data)
-            dispatch(setUser({ email: data.email, idToken: data.idToken }))
+            dispatch(setUser({ email: data.email, idToken: data.idToken, localId: data.localId }))
         }catch(error){
             setConfirmtPassword("")
             setEmail("")
