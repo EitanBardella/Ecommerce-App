@@ -7,6 +7,8 @@ import { AntDesign } from "@expo/vector-icons"
 import { useRegisterMutation } from '../app/servicies/auth'
 import { setUser } from '../features/auth/authSlice'
 import { useDispatch } from 'react-redux'
+import { registerSchema } from '../helpers/validation/authSchema'
+
 const Register = ({ navigation }) => {
     const dispatch = useDispatch()
     //Estados
@@ -17,16 +19,41 @@ const Register = ({ navigation }) => {
     const [password, setPassword] = useState("")
     //Guadar Confirm PassWord
     const [confirmPassword, setConfirmtPassword] = useState("")
+
+    //Estado para los errores de validacion
+    const [errorEmail,setErroEmail]= useState("")
+    const [errorPassword,setErrorPassword]= useState("")
+    const [errorConfirmPassword,setErrorConfirmPassword]= useState("")
+
     //Estado para RegisterMutation
     //Primer Valor --> Ejecuta el post
     const [triggerRegister] = useRegisterMutation()
 
     const onSubmit = async () => {
-        
-        //Obtencion del idToken que se encuentra adentro de data de Response
-        const { data } = await triggerRegister({ email, password })
-        console.log("Response", data)
-        dispatch(setUser({email:data.email,idToken: data.idToken}))
+        try {
+            registerSchema.validateSync({ email, password, confirmPassword })
+            //Obtencion del idToken que se encuentra adentro de data de Response
+            const { data } = await triggerRegister({ email, password })
+            console.log(data)
+            dispatch(setUser({ email: data.email, idToken: data.idToken }))
+        }catch(error){
+            setConfirmtPassword("")
+            setEmail("")
+            setPassword("")
+            switch(error.path){
+                case "email":
+                    setErroEmail(error.message)
+                    break
+                case "password":
+                    setErrorPassword(error.message)
+                    break
+                case "confirmPassword":
+                    setErrorConfirmPassword(error.message)
+                    break
+                default:
+                    break
+            }
+        }
     }
 
     return (
@@ -38,21 +65,21 @@ const Register = ({ navigation }) => {
                     value={email}
                     onChangeText={(t) => setEmail(t)}
                     isSecure={false}
-                    error=""
+                    error= {errorEmail}
                 />
                 <InputForm
                     label="Password"
                     value={password}
                     onChangeText={(t) => setPassword(t)}
                     isSecure={true}
-                    error=""
+                    error={errorPassword}
                 />
                 <InputForm
                     label="Confirm Password"
                     value={confirmPassword}
                     onChangeText={(t) => setConfirmtPassword(t)}
                     isSecure={true}
-                    error=""
+                    error={errorConfirmPassword}
                 />
                 <SubmitButton style={styles.submit} onPress={onSubmit} title='Submit' />
                 <Text> Already Have an Account? </Text>

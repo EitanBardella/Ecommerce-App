@@ -7,6 +7,8 @@ import {AntDesign} from "@expo/vector-icons"
 import { useLoginMutation } from '../app/servicies/auth'
 import {  useDispatch } from 'react-redux'
 import { setUser } from '../features/auth/authSlice'
+import { loginSchema } from '../helpers/validation/authSchema'
+
 
 const Login = ({navigation}) => {
     const dispatch= useDispatch()
@@ -15,13 +17,37 @@ const Login = ({navigation}) => {
     const [email, setEmail] = useState("")
     //Guadar PassWord
     const [password, setPassword] = useState("")
-
+    //Mutacion
     const [triggerLogin] = useLoginMutation()
 
+    //Validacion
+    const [errorEmail,setErrorEmail]= useState("")
+    const [errorPassword,setErrorPassword]= useState("")
+
     const onSubmit = async ()=>{
-        const {data} = await triggerLogin({email, password})
-        dispatch(setUser({email:data.email,idToken: data.idToken}))
-        console
+        try{
+            
+            loginSchema.validateSync({ email, password})
+            const {data} = await triggerLogin({email, password})
+            dispatch(setUser({email:data.email,idToken: data.idToken}))
+            
+        }catch(error){
+            
+            setEmail("")
+            setPassword("")
+            switch(error.path){
+                case "email":
+                    setErrorEmail(error.message)
+                    break
+                case "password":
+                    setErrorPassword(error.message)
+                    break
+                default:
+                    break
+                    
+            }
+        }
+        
     }
 
     return (
@@ -33,14 +59,14 @@ const Login = ({navigation}) => {
                     value={email}
                     onChangeText={(t) => setEmail(t)}
                     isSecure={false}
-                    error=""
+                    error={errorEmail}
                 />
                 <InputForm
                     label="Password"
                     value={password}
                     onChangeText={(t) => setPassword(t)}
                     isSecure={true}
-                    error="Caracter invalido"
+                    error={errorPassword}
                 />
                 <SubmitButton style={styles.submit} onPress={onSubmit} title='Submit'/>
                 <Text> First Time Here? </Text>
