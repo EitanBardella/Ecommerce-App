@@ -8,7 +8,7 @@ import { colores } from '../helpers/color'
 import { useSelector, } from 'react-redux';
 
 
-const Cart = () => {
+const Cart = ({navigation}) => {
 
     const cart = useSelector((state)=>state.cart)
 
@@ -22,7 +22,7 @@ const Cart = () => {
             />
             <View style={styles.confirmCont} >
                 <Text style={styles.total} >Total:$ {cart.total} </Text>
-                <Pressable style={styles.confirmBtn} >
+                <Pressable style={styles.confirmBtn} onPress={()=>navigation.navigate("ModalPay", {navigation:navigation})} >
                     <Text style={styles.confirmTxt} >Confirm</Text>
                 </Pressable>
             </View>
@@ -37,9 +37,10 @@ const styles = StyleSheet.create({
     container:{
         flex:1,
         justifyContent:"space-between",
-        marginBottom:10,
+        marginBottom:5,
         backgroundColor:colores.darkGreyShadow,
-        
+
+
     },
     confirmCont:{
         alignItems:"center",
@@ -47,7 +48,8 @@ const styles = StyleSheet.create({
         paddigng:25,
         height:110,
         width:"100%",
-        borderWidth:2,
+        borderTopWidth:3,
+        borderTopColor:colores.red,
         backgroundColor:colores.white
 
     },

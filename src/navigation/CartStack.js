@@ -3,6 +3,7 @@ import Cart from "../screen/Cart";
 import Header from "../components/Headerr"
 import {createNativeStackNavigator} from "@react-navigation/native-stack"
 import Order from "../screen/Order";
+import ModalPay from "../screen/ModalPay";
 
 const Stack = createNativeStackNavigator();
 
@@ -16,7 +17,7 @@ const CartStack = () => {
                     navigation={navigation}
                     title={
                         route.name === "Cart" ? "Shopping Cart" :
-                            "Your Orders"
+                        route.name === "ModalPay" ? "Pay Methods" : "Your Orders"
                     }
                     showMenuButton={false}
                     
@@ -25,6 +26,7 @@ const CartStack = () => {
         }}
         >
             <Stack.Screen name="Cart" component={Cart}/>
+            <Stack.Screen name="ModalPay" component={ModalPay}/>
             <Stack.Screen name="Order" component={Order}/>
         </Stack.Navigator>
     )
