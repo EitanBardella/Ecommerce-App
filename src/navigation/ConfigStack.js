@@ -1,23 +1,24 @@
 
-import Cart from "../screen/Cart";
+
 import Header from "../components/Headerr"
 import {createNativeStackNavigator} from "@react-navigation/native-stack"
-import Order from "../screen/Order";
-import ModalPay from "../screen/ModalPay";
+import Profile from "../screen/Profile";
+import Config from "../screen/Config";
+
 
 const Stack = createNativeStackNavigator();
 
-const CartStack = () => {
+const ConfigStack = () => {
     return (
         <Stack.Navigator
-        initialRouteName='Cart'
+        initialRouteName='Config'
         screenOptions={{
             header: ({ navigation, route }) => (
                 <Header
                     navigation={navigation}
                     title={
-                        route.name === "Cart" ? "Shopping Cart" :
-                        route.name === "ModalPay" ? "Pay Methods" : "Your Orders"
+                        route.name === "Config" ? "Settings" :
+                        route.name === "Perfil" ? "Profile" : "Profile"
                     }
                     showMenuButton={false}
                     
@@ -25,12 +26,11 @@ const CartStack = () => {
             )
         }}
         >
-            <Stack.Screen name="Cart" component={Cart}/>
-            <Stack.Screen name="ModalPay" component={ModalPay}/>
-            <Stack.Screen name="Order" component={Order}/>
+            <Stack.Screen name="Config" component={Config} />
+            <Stack.Screen name="Profile" component={Profile} />
 
         </Stack.Navigator>
     )
 }
 
-export default CartStack
+export default ConfigStack
