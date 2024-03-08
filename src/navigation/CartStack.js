@@ -2,6 +2,7 @@
 import Cart from "../screen/Cart";
 import Header from "../components/Headerr"
 import {createNativeStackNavigator} from "@react-navigation/native-stack"
+import Order from "../screen/Order";
 
 const Stack = createNativeStackNavigator();
 
@@ -14,15 +15,17 @@ const CartStack = () => {
                 <Header
                     navigation={navigation}
                     title={
-                        route.name === "CartStack" ? "Cart" :
-                            route.name === "ProdCategory" ? route.params?.categorySelect :
-                            "Product Detail"
+                        route.name === "Cart" ? "Shopping Cart" :
+                            "Your Orders"
                     }
+                    showMenuButton={false}
+                    
                 />
             )
         }}
         >
             <Stack.Screen name="Cart" component={Cart}/>
+            <Stack.Screen name="Order" component={Order}/>
         </Stack.Navigator>
     )
 }

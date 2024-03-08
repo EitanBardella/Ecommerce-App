@@ -14,6 +14,7 @@ const Cart = () => {
 
     return (
         <View style={styles.container} >
+            
             <FlatList
             data={cart.items}
             keyExtractor={(item)=>item.id}
@@ -25,6 +26,7 @@ const Cart = () => {
                     <Text style={styles.confirmTxt} >Confirm</Text>
                 </Pressable>
             </View>
+
         </View>
     )
 }
@@ -35,14 +37,18 @@ const styles = StyleSheet.create({
     container:{
         flex:1,
         justifyContent:"space-between",
-        marginBottom:130
+        marginBottom:10,
+        backgroundColor:colores.darkGreyShadow,
+        
     },
     confirmCont:{
         alignItems:"center",
         gap:10,
         paddigng:25,
-        height:80,
+        height:110,
         width:"100%",
+        borderWidth:2,
+        backgroundColor:colores.white
 
     },
     confirmBtn:{
@@ -59,6 +65,6 @@ const styles = StyleSheet.create({
 
     },
     total:{
-        fontSize:25
+        fontSize:25,
     }
 })

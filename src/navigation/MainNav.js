@@ -54,7 +54,7 @@ const MainNav = () => {
                     }
                 }}
             />
-            <Tab.Screen name='OrderStack' component={OrderStack}
+            {/* <Tab.Screen name='OrderStack' component={OrderStack}
                 options={{
                     tabBarIcon: () => {
                         return (
@@ -64,7 +64,7 @@ const MainNav = () => {
                         )
                     }
                 }}
-            />
+            /> */}
         </Tab.Navigator>
             </NavigationContainer>
         </>
