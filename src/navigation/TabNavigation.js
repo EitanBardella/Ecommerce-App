@@ -2,7 +2,7 @@
 import { StyleSheet, View } from 'react-native'
 //Stacks
 import CartStack from './CartStack';
-import OrderStack from "./OrderStack"
+import ConfigStack from './ConfigStack';
 import ShopStack from './ShopStack';
 //Extras
 import { FontAwesome6 } from "@expo/vector-icons"

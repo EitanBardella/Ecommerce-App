@@ -22,8 +22,8 @@ const ImageSelector = ({ navigation }) => {
     const [selectedImage, setSelectedImage] = useState(null);
 
     const selectedPhoto = (path) => {
-
         setSelectedImage(path)
+        setModal(!modal)
     };
 
     //CAMERA
