@@ -5,7 +5,7 @@ import { Entypo } from "@expo/vector-icons";
 import Category from './Category';
 import { colores } from "../helpers/color"; 
 
-
+//COMPONENTE EN DESUSO
 const MenuButton = ({navigation}) => {
 
     const [menuVisible, setMenuVisible] = useState(false)

@@ -3,9 +3,9 @@ import React from 'react'
 import { colores } from "../helpers/color"; 
 import {Entypo} from "@expo/vector-icons";
 
-import MenuButton from './MenuButton'
+// import MenuButton from './MenuButton'
 
-const Header = ({title,navigation,showMenuButton = true}) => {
+const Header = ({title,navigation}) => {
     return (
         <>
             <View style={styles.container} >
@@ -15,9 +15,9 @@ const Header = ({title,navigation,showMenuButton = true}) => {
                         <Entypo name="arrow-with-circle-left" size={35} color="black" />
                 </Pressable>
                 }
-                {/*Permite mostrar o no el menu Button*/}
-                {showMenuButton && <MenuButton navigation={navigation} />}
-                <Text style={styles.text}>{title}</Text>
+                {/* Permite mostrar o no el menu Button
+                {showMenuButton && <MenuButton navigation={navigation} />} */}
+                <Text style={styles.text}>{title}</Text> 
             </View>
         </>
     )
