@@ -11,20 +11,22 @@ import { useSelector } from 'react-redux';
 const ImageSelector = ({ navigation }) => {
 
     const [img, setImg] = useState("")
+    
+    
     //GALERY
+    // const [modal, setModal] = useState(false)
 
-    const [modal, setModal] = useState(false)
-
-    const toggle = () => {
-        setModal(!modal)
-    }
+    // const toggle = () => {
+    //     setModal(!modal)
+    // }
 
     const [selectedImage, setSelectedImage] = useState(null);
 
-    const selectedPhoto = (path) => {
-        setSelectedImage(path)
-        setModal(!modal)
-    };
+    // const selectedPhoto = (path) => {
+    //     setSelectedImage(path)
+    //     setModal(!modal)
+    // };
+
 
     //CAMERA
 
@@ -62,7 +64,7 @@ const ImageSelector = ({ navigation }) => {
                 style={styles.img}
                 resizeMode='cover'
             />
-            <AddButton title={"Profile Image´s Gallery "} onPress={toggle} />
+            {/* <AddButton title={"Profile Image´s Gallery "} onPress={toggle} /> */}
 
             <AddButton title={"Take a Photo"} onPress={takePhoto} />
 
@@ -72,8 +74,8 @@ const ImageSelector = ({ navigation }) => {
             {selectedImage ? (
                 <AddButton title={"Confirm Photo"} onPress={confirmImage} />
             ) : null}
-
-            <Modal
+            {/* Modal para la galeria de fotos desactivado temporalemnte */}
+            {/* <Modal
                 visible={modal}
                 animationType="fade"
                 transparent={true}
@@ -99,7 +101,7 @@ const ImageSelector = ({ navigation }) => {
                     </View>
 
                 </View>
-            </Modal>
+            </Modal> */}
 
         </View>
     )
