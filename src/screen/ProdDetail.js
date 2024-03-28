@@ -6,7 +6,8 @@ import { useDispatch } from 'react-redux';
 import { addCartItem } from '../features/cart/cartSlice'
 
 
-const ProdDetail = ({route}) => {
+const ProdDetail = ({navigation,route}) => {
+    
     const dispatch = useDispatch()
     const {productId}= route.params
     const {data:prod, isLoading} = useGetProdByIdQuery(productId)
@@ -20,7 +21,11 @@ const ProdDetail = ({route}) => {
     // }, [prods])
     
 
-    //NO LEE EL TITULO
+    const addCartProd = ()=>{
+        dispatch(addCartItem(prod))
+        navigation.navigate("CartStack")
+    }
+
 
     return (
         <View style={styles.container} >
@@ -53,7 +58,7 @@ const ProdDetail = ({route}) => {
             </View>
             <View style={styles.container4} >
                 <Counter/>
-                <Pressable style={styles.btnAdd} onPress={()=>dispatch(addCartItem(prod))} >
+                <Pressable style={styles.btnAdd} onPress={addCartProd} >
                     <Text style={styles.textAdd}   >Add Cart</Text>
                 </Pressable>
             </View>
@@ -61,81 +66,7 @@ const ProdDetail = ({route}) => {
     )
 }
 
-// import { StyleSheet, Text, View, Image, Pressable } from 'react-native'
-// // import prods from "../helpers/data/product.json"
-// import { useGetProdByIdQuery } from '../app/servicies/shop'
-// import { useEffect, useState } from 'react'
-// import { colores } from '../helpers/color'
-// import Counter from '../components/Counter'
-// import { useDispatch } from 'react-redux';
-// import { addCartItem } from '../features/cart/cartSlice'
 
-
-// const ProdDetail = ({ route }) => {
-//     const { productId } = route.params
-//     const { data: products, isLoading, isError } = useGetProdByIdQuery(productId)
-//     const [selectedProduct, setSelectedProduct] = useState(null)
-//     console.log("Productos recibidos", products)
-//     useEffect(() => {
-//         if (!isLoading && !isError && products) {
-//             const product = products.find(prod => prod.id === productId)
-//             console.log("Producto encontrado:", product);
-//             setSelectedProduct(product)
-//         }
-//     }, [products, isLoading, isError])
-
-//     const dispatch = useDispatch()
-
-//     if (isLoading) {
-//         return <Text>Loading...</Text>
-//     }
-
-//     if (isError) {
-//         return <Text>Error occurred while fetching product.</Text>
-//     }
-
-//     if (!selectedProduct) {
-//         return <Text>Product not found.</Text>
-//     }
-
-//     return (
-//         <View style={styles.container} >
-//             <Text style={styles.textTitle} >{prod.title}</Text>
-//             <View style={styles.container2} >
-//                 <Image style={styles.img} resizeMode='cover' source={{ uri: prod.thumbnail }} />
-//                 <View style={styles.change}>
-//                     <Pressable >
-//                         <Text>Colors</Text>
-//                     </Pressable>
-//                     <Pressable >
-//                         <Text>Colors</Text>
-//                     </Pressable>
-//                     <Pressable >
-//                         <Text>Colors</Text>
-//                     </Pressable>
-//                 </View>
-//             </View>
-//             <View style={styles.container3}>
-//                 <View  style={styles.textContainer}>
-//                     <Text style={styles.textDescriptionTitle}>Description:</Text>
-//                     <Text style={styles.textDescription} >{prod.description}</Text>
-//                 </View>
-//                 <View  style={styles.textContainer}>
-//                     <Text style={styles.textDescriptionTitle} >Brand:</Text>
-//                     <Text style={styles.textDescription} >{prod.brand}</Text>
-//                 </View>
-
-//                 <Text> $ {prod.price}</Text>
-//             </View>
-//             <View style={styles.container4} >
-//                 <Counter/>
-//                 <Pressable style={styles.btnAdd} onPress={()=>dispatch(addCartItem(prod))} >
-//                     <Text style={styles.textAdd}   >Add Cart</Text>
-//                 </Pressable>
-//             </View>
-//         </View>
-//     )
-// }
 
 
 
