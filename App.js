@@ -5,7 +5,9 @@ import MainNav from './src/navigation/MainNav'
 //Redux
 import { store } from './src/app/store'
 import { Provider } from 'react-redux'
+import { init } from './src/helpers/db'
 
+init()
 
 const App = () => {
 //Cosas para hacer 

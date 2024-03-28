@@ -2,10 +2,25 @@ import { StyleSheet, Text, View, Image, Pressable } from 'react-native'
 import React from 'react'
 import { colores } from "../helpers/color"; 
 import {Entypo} from "@expo/vector-icons";
+import { useDispatch, useSelector } from 'react-redux';
+import { clearUser } from '../features/auth/authSlice';
+import { deleteSession } from '../helpers/db';
 
 // import MenuButton from './MenuButton'
 
 const Header = ({title,navigation}) => {
+
+
+    const dispatch = useDispatch()
+
+    const tokenId = useSelector((state) => state.auth.tokenId)
+
+    const onLogout = ()=>{
+        dispatch(clearUser())
+        deleteSession()
+    }
+
+
     return (
         <>
             <View style={styles.container} >
@@ -18,6 +33,10 @@ const Header = ({title,navigation}) => {
                 {/* Permite mostrar o no el menu Button
                 {showMenuButton && <MenuButton navigation={navigation} />} */}
                 <Text style={styles.text}>{title}</Text> 
+                {tokenId && (
+                    <Pressable style={styles.logOut} onPress={onLogout}>
+                        <AntDesign name="logout"size={30} color ="black"/>
+                    </Pressable>)}
             </View>
         </>
     )
@@ -41,6 +60,11 @@ const styles = StyleSheet.create({
     },
     goBack:{
         marginRight:20
+    },
+    logOut:{
+        position:"absolute",
+        right:30,
+        bottom:40
     },
     // logo: {
     //     width: 50,

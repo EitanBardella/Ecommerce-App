@@ -14,12 +14,31 @@ import { FontAwesome6 } from "@expo/vector-icons"
 import { Fontisto } from "@expo/vector-icons"
 //Tab
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { useEffect } from 'react';
+import { fetchSession } from '../helpers/db';
 
+import { useDispatch } from 'react-redux';
+import { setUser } from '../features/auth/authSlice';
 
 const Tab = createBottomTabNavigator();
 
+
+
 const MainNav = () => {
 
+    const dispatch = useDispatch((state) => state.auth )
+
+
+    useEffect(() => {
+        (async ()=>{
+            const session = await fetchSession()
+            if (session.rows.lenght){
+                const user = session.rows._array[0]
+                dispatch(setUser)
+            }
+
+        })()
+    },[])
 
 
 
@@ -69,17 +88,7 @@ const MainNav = () => {
                 }}
             /> 
 
-                    {/* <Tab.Screen name='OrderStack' component={OrderStack}
-                options={{
-                    tabBarIcon: () => {
-                        return (
-                            <View>
-                                <Fontisto name="shopping-bag-1" size={34} />
-                            </View>
-                        )
-                    }
-                }}
-            /> */}
+
                 </Tab.Navigator>
             </NavigationContainer>
         </>

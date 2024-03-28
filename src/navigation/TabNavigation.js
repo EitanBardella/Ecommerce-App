@@ -64,6 +64,7 @@ export default TabNavigation
 const styles = StyleSheet.create({
     tabBar: {
         height: 70,
+        elevation:4,
         borderRadius: 10,
         position: "absolute",
         marginBottom: 0

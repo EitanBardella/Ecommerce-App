@@ -8,6 +8,7 @@ import { useRegisterMutation } from '../app/servicies/auth'
 import { setUser } from '../features/auth/authSlice'
 import { useDispatch } from 'react-redux'
 import { registerSchema } from '../helpers/validation/authSchema'
+import { insertSession } from '../helpers/db'
 
 const Register = ({ navigation }) => {
     const dispatch = useDispatch()
@@ -34,6 +35,7 @@ const Register = ({ navigation }) => {
             registerSchema.validateSync({ email, password, confirmPassword })
             //Obtencion del idToken que se encuentra adentro de data de Response
             const { data } = await triggerRegister({ email, password })
+            insertSession(data)
             console.log(data)
             dispatch(setUser({ email: data.email, idToken: data.idToken, localId: data.localId }))
         }catch(error){
