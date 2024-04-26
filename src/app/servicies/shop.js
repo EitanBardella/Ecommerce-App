@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 export const shopApi = createApi({
     reducerPath:"shopApi",
-    baseQuery: fetchBaseQuery({baseUrl:"https://mobile-6deec-default-rtdb.firebaseio.com/"}),
+    baseQuery: fetchBaseQuery({baseUrl:"https://console.firebase.google.com/u/1/project/app-2-87b72/database/app-2-87b72-default-rtdb/data/~2F?hl=es-419"}),
     endpoints: (builder)=>({
         //Consulta por todo, no necesita paramentros 
         getAllProd:builder.query({

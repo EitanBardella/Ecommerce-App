@@ -29,12 +29,13 @@ const Register = ({ navigation }) => {
     //Estado para RegisterMutation
     //Primer Valor --> Ejecuta el post
     const [triggerRegister] = useRegisterMutation()
-
+    console.log('triggerRegister:', triggerRegister);
     const onSubmit = async () => {
         try {
             registerSchema.validateSync({ email, password, confirmPassword })
             //Obtencion del idToken que se encuentra adentro de data de Response
             const { data } = await triggerRegister({ email, password })
+            console.log(data.idToken)
             insertSession(data)
             console.log(data)
             dispatch(setUser({ email: data.email, idToken: data.idToken, localId: data.localId }))
@@ -55,6 +56,7 @@ const Register = ({ navigation }) => {
                 default:
                     break
             }
+        console.log(error)
         }
     }
 

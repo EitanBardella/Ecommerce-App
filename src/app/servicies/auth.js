@@ -1,4 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+console.log('URL base:', "https://identitytoolkit.googleapis.com/v1/");
 
 export const authApi = createApi({
     reducerPath:"authApi",
@@ -6,14 +7,14 @@ export const authApi = createApi({
     endpoints:(builder)=>({
         register:builder.mutation({
             query:(user)=>({
-                url: "accounts:signUp?key=AIzaSyC_f_yeEL8CSubBvhyw62MqZicUozhsQ_Y",
+                url: "accounts:signUp?key=AIzaSyCk0hcmgCxqYT1uv8g9kmOf_uGbCIS4fnM",
                 method:"POST",
                 body:user
             })
         }),
         login:builder.mutation({
             query:(user) =>({
-                url:"accounts:signInWithPassword?key=AIzaSyC_f_yeEL8CSubBvhyw62MqZicUozhsQ_Y",
+                url:"accounts:signInWithPassword?key=AIzaSyCk0hcmgCxqYT1uv8g9kmOf_uGbCIS4fnM",
                 method:"POST",
                 body:user
             })
